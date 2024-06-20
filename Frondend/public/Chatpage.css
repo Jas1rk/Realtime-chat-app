@@ -1,0 +1,11 @@
+.chat{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.chat-main {
+    height: 100%;
+    flex: 0.8;
+}

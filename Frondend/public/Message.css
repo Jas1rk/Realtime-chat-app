@@ -1,0 +1,85 @@
+.message-main {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f6fab9;
+  }
+  
+  .leave-btn {
+    padding: 10px;
+    width: 150px;
+    border: none;
+    outline: none;
+    background-color: #973131;
+    cursor: pointer;
+    color: whitesmoke;
+    border-radius: 10px;
+  }
+
+  .leave-btn:hover{
+    background-color: #ADD899;
+    color: black;
+    border: 2px solid black;
+  }
+  
+  .message-container {
+    width: 100%;
+    height: 80vh;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+  
+  .message-container > * {
+    margin-bottom: 10px;
+  }
+  
+  .message__chats {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message__chats1 {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .message__chats2 {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .sender__name {
+    text-align: right;
+    margin-bottom: 5px;
+  }
+  
+  .recipient__name {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  
+  .message__recipient {
+    background-color: #ADD899;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 25px;
+    max-width: 30%;
+    word-wrap: break-word;
+  }
+  
+  .message__sender {
+    background-color: #FFDE95;
+    color: rgb(19, 18, 18);
+    padding: 10px;
+    border-radius: 25px;
+    max-width: 30%;
+    word-wrap: break-word;
+  }
