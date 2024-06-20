@@ -1,0 +1,40 @@
+.home-container {
+  width: 350px;
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  border: 2px solid black;
+  padding: 25px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.home-header {
+  display: inline-block;
+  width: 300px;
+}
+
+.username-input {
+  border-radius: 5px;
+  border: 1px solid rgba(43, 33, 33, 0.534);
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.home-btn {
+  margin-top: 30px;
+  border: 2px solid #002f34;
+  border-radius: 15px;
+  width: 150px;
+  height: 35px;
+  font-weight: 800;
+  background-color: transparent;
+  cursor: pointer;
+ 
+}
+
+.home-btn:hover {
+  background-color: #002f34;
+  color: aliceblue;
+}

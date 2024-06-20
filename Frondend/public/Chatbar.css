@@ -1,0 +1,30 @@
+.chat-sidebar {
+  height: 100%;
+  background-color: #F6FAB9;
+  flex: 0.2;
+  padding: 20px;
+  border-right: 1px solid #fdfdfd;
+}
+
+
+
+.chat-headeres {
+  margin: 30px 0 20px 0;
+}
+
+.chat-users > * {
+  margin-bottom: 10px;
+  color: #fbfbfc;
+  font-size: 14px;
+  background-color:  #254336;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 6px 6px #ffffff21;
+  
+}
+
+.online__users > * {
+  margin-bottom: 10px;
+  color: rgb(238, 102, 102);
+  font-style: italic;
+}
