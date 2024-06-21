@@ -1,28 +1,45 @@
 import React from "react";
 import "../../public/Message.css";
+import { useNavigate } from "react-router-dom";
 
-const Message = () => {
+const Message = ({ messages }) => {
+  const navigate = useNavigate();
+
+  const leaveChat = () => {
+    localStorage.removeItem("userName");
+    navigate("/");
+  };
   return (
     <>
       <header className="message-main">
         <h3>Enjoy with Colleagues</h3>
-        <button className="leave-btn">Leave</button>
+        <button className="leave-btn" onClick={leaveChat}>
+          Leave
+        </button>
       </header>
 
       <div className="message-container">
-        <div className="message__chats message__chats1">
-          <p className="sender__name">You</p>
-          <div className="message__sender">
-            <p>Hello there How are u </p>
-          </div>
-        </div>
-
-        <div className="message__chats message__chats2">
-          <p className="recipient__name"> Other</p>
-          <div className="message__recipient">
-            <p>Hey, I'm good, you?</p>
-          </div>
-        </div>
+        {messages.map((message) =>
+          message.name === localStorage.getItem("userName") ? (
+            <>
+              <div className="message__chats message__chats1" key={message.id}>
+                <p className="sender__name">You</p>
+                <div className="message__sender">
+                  <p>{message.text}</p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="message__chats message__chats2" key={message.id}>
+                <p className="recipient__name">{message.name}</p>
+                <div className="message__recipient">
+                  <p>{message.text}</p>
+                </div>
+              </div>
+            </>
+          )
+        )}
 
         <div className="message__status">
           <p>Someone is typing...</p>
