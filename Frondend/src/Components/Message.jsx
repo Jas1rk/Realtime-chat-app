@@ -2,8 +2,9 @@ import React from "react";
 import "../../public/Message.css";
 import { useNavigate } from "react-router-dom";
 
-const Message = ({ messages }) => {
+const Message = ({ messages, lastMessage, typingStatus }) => {
   const navigate = useNavigate();
+  let preSender = null
 
   const leaveChat = () => {
     localStorage.removeItem("userName");
@@ -42,11 +43,13 @@ const Message = ({ messages }) => {
         )}
 
         <div className="message__status">
-          <p>Someone is typing...</p>
+          <p>{typingStatus}</p>
         </div>
+        <div ref={lastMessage} />
       </div>
     </>
   );
 };
 
 export default Message;
+

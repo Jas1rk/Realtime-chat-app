@@ -11,14 +11,29 @@ const socketIO = require("socket.io")(http, {
   },
 });
 
+let users = [];
+
 socketIO.on("connection", (socket) => {
   console.log(`⚡:${socket.id} user has connected`);
 
   socket.on("message", (data) => {
-    socketIO.emit('response',data)
+    socketIO.emit("response", data);
   });
+
+  socket.on("newUser", (data) => {
+    users.push(data);
+    socket.emit("userResponse", users);
+    console.log("This is users", users);
+  });
+
+  socket.on("typing", (data) => {
+    socket.broadcast.emit("typingResponse", data);
+  });
+  
   socket.on("disconnect", () => {
     console.log("🔥:  user disconnected");
+    users = users.filter((user) => user.socketIO !== socket.id);
+    socket.emit("userResponse", users);
   });
 });
 

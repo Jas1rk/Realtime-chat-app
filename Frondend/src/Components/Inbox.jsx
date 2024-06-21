@@ -3,6 +3,7 @@ import "../../public/Inbox.css";
 
 const Inbox = ({ socket }) => {
   const [message, setMessage] = useState("");
+
   const handleMessage = (event) => {
     event.preventDefault();
     if (message.trim() && localStorage.getItem("userName")) {
@@ -15,6 +16,10 @@ const Inbox = ({ socket }) => {
     }
     setMessage("");
   };
+
+  const handleTyping = () => {
+    socket.emit("typing", `${localStorage.getItem("userName")} is typing...`);
+  };
   return (
     <div className="chat-footer">
       <form className="form" onSubmit={handleMessage}>
@@ -24,6 +29,7 @@ const Inbox = ({ socket }) => {
           className="message"
           onChange={(event) => setMessage(event.target.value)}
           value={message}
+          onKeyDown={handleTyping}
         />
         <button className="send-btn">
           <i className="fa-solid fa-paper-plane"></i>
