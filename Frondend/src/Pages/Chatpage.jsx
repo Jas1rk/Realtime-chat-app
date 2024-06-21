@@ -2,6 +2,7 @@ import React from 'react'
 import Chatbar from '../Components/Chatbar'
 import '../../public/Chatpage.css'
 import Message from '../Components/Message'
+import Inbox from '../Components/Inbox'
 
 const Chatpage = () => {
   return (
@@ -9,6 +10,7 @@ const Chatpage = () => {
       <Chatbar/>
       <div className="chat-main">
         <Message/>
+        <Inbox/>
       </div>
     </div>
   )

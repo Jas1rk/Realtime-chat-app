@@ -30,6 +30,7 @@
     height: 80vh;
     padding: 20px;
     overflow-y: scroll;
+    
   }
   
   .message-container > * {
